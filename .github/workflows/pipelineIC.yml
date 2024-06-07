@@ -1,8 +1,7 @@
 name: Workflow
 on:
   push:
-    branches:
-      - feature*
+  
 jobs:
   build:
     runs-on: ubuntu-latest
