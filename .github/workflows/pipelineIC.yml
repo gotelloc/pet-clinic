@@ -3,10 +3,22 @@ on:
   push:
   
 jobs:
-  build:
+  SAST:
     runs-on: ubuntu-latest
     steps:
-      - name: Hola Mundo
+    
+      - name: Clonacion de codigo
+        uses: actions/checkout@v4
+     
+      - name: Setup Java JDK
+        uses: actions/setup-java@v4.2.1
+        with: 
+          java-version: '17'
+          distribution: 'temurin' 
+     
+      - name: Build
         run: | 
-          echo "hola mundo"
+          chmod 777 gradlew
+          ./gradlew build
+
     
